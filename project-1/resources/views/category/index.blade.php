@@ -1,0 +1,1 @@
+<h1>Hello Index function works</h1>
