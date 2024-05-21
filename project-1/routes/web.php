@@ -23,5 +23,4 @@ Route::get('/', function () {
 //     return view('second');
 // });
 
-
 Route::resource("/category",CategoryController::class);
