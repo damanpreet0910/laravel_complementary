@@ -16,9 +16,19 @@
     @foreach($category as $cat)
         <tr>
             <th>{{$loop->iteration}}</th>
-            <th>{{$cat->categoryName}}</th>
-            <th>Edit</th>
-            <th>Delete</th>
+            <td>{{$cat->categoryName}}</td>
+            <td>
+                <a href="{{route('category.edit',$cat->id)}}">
+                    <button type="button">Edit</button>
+                </a>
+            </td>
+            <td>
+                <form method="post" action="{{route('category.destroy',$cat->id)}}">
+                    @csrf
+                    @method('delete')
+                    <button type="submit">Delete</button>
+                </form>
+            </td>
         </tr>
     @endforeach
 </table>
